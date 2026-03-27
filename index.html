@@ -211,6 +211,62 @@
       text-decoration: underline;
     }
 
+    /* Version history */
+    .history-section {
+      margin-bottom: 48px;
+    }
+
+    .history-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--text3);
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .history-toggle:hover { color: var(--text2); }
+
+    .history-list {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .history-entry {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: white;
+    }
+
+    .history-version {
+      font-size: 13px;
+      font-weight: 500;
+      font-family: monospace;
+      letter-spacing: -0.02em;
+    }
+
+    .history-link {
+      font-size: 11px;
+      color: var(--accent) !important;
+      text-decoration: none !important;
+      font-weight: 500;
+    }
+
+    .history-link:hover { text-decoration: underline !important; }
+
     /* Responsive */
     @media (max-width: 600px) {
       .container { padding: 48px 16px 40px; }
@@ -306,6 +362,17 @@
       <div class="feature-icon">🔒</div>
       <h3>Local-First</h3>
       <p>All data stored on your device. No account needed.</p>
+    </div>
+  </div>
+
+  <div class="history-section">
+    <button class="history-toggle" onclick="document.getElementById('history-list').style.display = document.getElementById('history-list').style.display === 'none' ? 'flex' : 'none'">
+      <span>Previous versions</span>
+      <span style="font-size: 8px;">▾</span>
+    </button>
+    <div class="history-list" id="history-list" style="display: none;">
+      <div class="history-entry"><span class="history-version">v0.1.0</span><a href="https://github.com/Ernest-GC/Recall-Public/releases/tag/v0.1.0" class="history-link">Downloads ↗</a></div>
+<!-- HISTORY_ENTRIES -->
     </div>
   </div>
 
